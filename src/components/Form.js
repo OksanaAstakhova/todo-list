@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+
 const Form = ({ setInputText, todos, setTodos, inputText }) => {
     const inputTextHandler = (e) => {
         setInputText(e.target.value);
@@ -14,7 +17,7 @@ const Form = ({ setInputText, todos, setTodos, inputText }) => {
         ]);
         setInputText("");
     };
-   
+
     return (
         <div className="form-wrapper">
             <form className="todo-form" onSubmit={submitTodoHandler}>
@@ -24,13 +27,9 @@ const Form = ({ setInputText, todos, setTodos, inputText }) => {
                     type="text"
                     className="todo-input"
                 />
-                <button
-                    className="todo-button"
-                    type="submit"
-                >
-                    <i className="fas fa-plus"></i>
+                <button className="todo-button" type="submit">
+                    <FontAwesomeIcon icon={faPlus} />
                 </button>
-            
             </form>
         </div>
     );

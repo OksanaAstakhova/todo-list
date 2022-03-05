@@ -1,3 +1,7 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+
 function Todo({ text, todo, todos, setTodos }) {
     const deleteHandler = () => {
         setTodos(todos.filter((el) => el.id !== todo.id));
@@ -17,12 +21,14 @@ function Todo({ text, todo, todos, setTodos }) {
     };
     return (
         <div className="todo">
-            <li className={`todo-item ${todo.completed ? "completed" : ""}`}>{text}</li>
+            <li className={`todo-item ${todo.completed ? "completed" : ""}`}>
+                {text}
+            </li>
             <button onClick={completeHandler} className="complete-btn">
-                <i className="fas fa-check"></i>
+                <FontAwesomeIcon icon={faCheck}/>
             </button>
             <button onClick={deleteHandler} className="trash-btn">
-                <i className="fas fa-trash"></i>
+                <FontAwesomeIcon icon={faTrash}/>
             </button>
         </div>
     );
